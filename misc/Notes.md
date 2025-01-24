@@ -1,5 +1,5 @@
 
-# Data Redundancy in Azure Storage Accounts
+# 1) Data Redundancy in Azure Storage Accounts
 - **Definition:** Storing multiple copies of data in different locations or systems.  
 - **Purpose:** Ensures data availability, integrity, and protection against failures or disasters.  
 
@@ -43,4 +43,15 @@
 - **Current Setup:** Using **LRS** for the storage account to reduce costs.
 - **Production Environment:** GRS may be a more suitable choice if avoiding data loss due to a regional event is critical.
 --------------------------------------------
+
+# 2) Short Notes on Hierarchical Namespace  
+
+- **Feature for Data Lake**: Essential for creating a data lake; without it, the storage account defaults to blob storage.  
+- **Blob Storage vs. Data Lake**:  
+  - Blob storage: Flat file structure with files in containers.  
+  - Data lake: Supports a folder hierarchy (containers → folders → subfolders).  
+- **Folder Structure**: Enables organized file storage with containers and nested folders, unlike blob storage.  
+- **Data Analysis**: Facilitates easier data analysis and table creation due to structured organization.  
+- **Optional Setting**: Must enable hierarchical namespace during storage account creation; not enabled by default.  
+- **Practical Example**: Common structure includes containers like **bronze**, **silver**, and **gold**, with folders for specific files in each.  
 

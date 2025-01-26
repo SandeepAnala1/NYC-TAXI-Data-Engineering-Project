@@ -75,4 +75,41 @@ df_trip = spark.read.format('parquet')\
                     .option('recursiveFileLookup', True)\
                     .load('abfss://bronze@nyctaxiassnsa.dfs.core.windows.net/trip_2023/')
 ```
+------------------------------------------------------
 
+# 4) **Delta Lake**
+- **Definition**: An open-source storage layer on top of data lakes, providing **ACID transactions**, **schema enforcement**, and **data versioning**.
+- **Key Features**:
+  - Combines the scalability of data lakes with the reliability of traditional databases.
+  - Supports **batch** and **streaming** data.
+  - Handles **big data challenges** like data quality and consistency.
+
+---
+
+### **Delta Log**
+- **Definition**: A transaction log that records every change made to a Delta table.
+- **Functionality**:
+  - Stores metadata about the Delta table and its versions in JSON format.
+  - Helps maintain **atomicity** and **consistency**.
+  - Enables **fault tolerance** by keeping a record of all transactions.
+
+---
+
+### **Versioning**
+- **Definition**: Delta Lake keeps a **version history** of changes to a Delta table.
+- **Key Benefits**:
+  - Allows tracking of modifications (insert, delete, update).
+  - Supports debugging, auditing, and replicating datasets at specific points in time.
+
+---
+
+### **Time Travel**
+- **Definition**: A feature in Delta Lake that allows querying data at any **previous state** by specifying a timestamp or version.
+- **Use Cases**:
+  - **Debugging**: Access historical data to debug errors.
+  - **Auditing**: Retrieve older snapshots for compliance or analysis.
+  - **Recovery**: Restore a table to a previous state in case of accidental changes.
+
+--- 
+
+Let me know if you’d like detailed examples or use cases for these concepts!
